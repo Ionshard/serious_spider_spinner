@@ -4,18 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_erjjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erjjl"]
-size = Vector2(20, 209)
+size = Vector2(20, 141)
 
 [node name="Demo Level" type="Node2D" unique_id=1304296234]
 script = ExtResource("1_y8kiq")
 
 [node name="Wall" type="Area2D" parent="." unique_id=1779455473]
-position = Vector2(336, 42)
+position = Vector2(364, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=381719793]
-position = Vector2(0, 94.5)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_erjjl")
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_erjjl")]
 unique_name_in_owner = true
 position = Vector2(44, 53)
+
+[node name="Wall2" type="Area2D" parent="." unique_id=346979673]
+position = Vector2(119, 172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=258149188]
+shape = SubResource("RectangleShape2D_erjjl")

@@ -47,7 +47,11 @@ script = ExtResource("2_b2mth")
 sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.88295794
+frame_progress = 0.49842724
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
 shape = SubResource("CircleShape2D_b2mth")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=160077605]
+target_position = Vector2(-32, -39)
+collide_with_areas = true
