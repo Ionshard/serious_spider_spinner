@@ -1,8 +1,21 @@
 [gd_scene format=3 uid="uid://dkoe8rcj5ixoc"]
 
-[ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="1_y8kiq"]
+[ext_resource type="Script" uid="uid://6hgvg0is0qq5" path="res://game/demo_level/demo_level.gd" id="1_y8kiq"]
+[ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_erjjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erjjl"]
+size = Vector2(20, 209)
 
 [node name="Demo Level" type="Node2D" unique_id=1304296234]
+script = ExtResource("1_y8kiq")
 
-[node name="Player" parent="." unique_id=907700845 instance=ExtResource("1_y8kiq")]
-position = Vector2(213, 187)
+[node name="Wall" type="Area2D" parent="." unique_id=1779455473]
+position = Vector2(336, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=381719793]
+position = Vector2(0, 94.5)
+shape = SubResource("RectangleShape2D_erjjl")
+
+[node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_erjjl")]
+unique_name_in_owner = true
+position = Vector2(44, 53)

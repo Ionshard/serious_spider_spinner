@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b57b0fl545egk"]
 
 [ext_resource type="Texture2D" uid="uid://ddqvit2vahh3j" path="res://assets/sprites/spider-run.png" id="1_obar5"]
+[ext_resource type="Script" uid="uid://defusdtx8yybt" path="res://game/player/player.gd" id="2_b2mth"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4w0n"]
 atlas = ExtResource("1_obar5")
@@ -36,8 +37,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="AnimatedSprite2D" unique_id=907700845]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2mth"]
+radius = 11.401754
+
+[node name="Player" type="Area2D" unique_id=1471301588]
+script = ExtResource("2_b2mth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907700845]
 sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.8241355
+frame_progress = 0.88295794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
+shape = SubResource("CircleShape2D_b2mth")
