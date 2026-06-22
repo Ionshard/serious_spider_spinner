@@ -7,6 +7,9 @@
 [node name="Demo Level" type="Node2D" unique_id=1304296234]
 script = ExtResource("1_y8kiq")
 
+[node name="Webs" type="Node2D" parent="." unique_id=1137841556]
+unique_name_in_owner = true
+
 [node name="Wall" parent="." unique_id=1681724140 instance=ExtResource("3_4icor")]
 position = Vector2(345, 100)
 
@@ -16,3 +19,5 @@ position = Vector2(102, 189)
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_erjjl")]
 unique_name_in_owner = true
 position = Vector2(44, 53)
+
+[connection signal="web_shot" from="Player" to="." method="_on_player_web_shot"]

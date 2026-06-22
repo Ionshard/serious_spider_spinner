@@ -47,7 +47,7 @@ script = ExtResource("2_b2mth")
 sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.49842724
+frame_progress = 0.031068917
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
 shape = SubResource("CircleShape2D_b2mth")
