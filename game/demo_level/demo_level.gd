@@ -10,8 +10,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed('reset'):
+		get_tree().reload_current_scene()
 
 
 func _on_player_web_shot(web: Web) -> void:
 	webs.add_child(web)
+
+func _on_goal_area_entered(area: Area2D) -> void:
+	print()
+	if area is Player:
+		get_tree().unload_current_scene()

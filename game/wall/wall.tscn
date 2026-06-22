@@ -8,6 +8,7 @@ size = Vector2(130, 130)
 [node name="Wall" type="Area2D" unique_id=1681724140]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1775198980]
+modulate = Color(0.116666794, 0, 1, 1)
 texture = ExtResource("1_on66w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066732784]

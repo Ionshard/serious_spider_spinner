@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://6hgvg0is0qq5" path="res://game/demo_level/demo_level.gd" id="1_y8kiq"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_erjjl"]
 [ext_resource type="PackedScene" uid="uid://bctriafdmx6u6" path="res://game/wall/wall.tscn" id="3_4icor"]
+[ext_resource type="Texture2D" uid="uid://delet4hkqvc8p" path="res://icon.svg" id="4_4qryv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma037"]
+size = Vector2(18, 18)
 
 [node name="Demo Level" type="Node2D" unique_id=1304296234]
 script = ExtResource("1_y8kiq")
@@ -11,13 +15,28 @@ script = ExtResource("1_y8kiq")
 unique_name_in_owner = true
 
 [node name="Wall" parent="." unique_id=1681724140 instance=ExtResource("3_4icor")]
-position = Vector2(345, 100)
+position = Vector2(178, 204)
 
 [node name="Wall2" parent="." unique_id=2133450731 instance=ExtResource("3_4icor")]
-position = Vector2(102, 189)
+position = Vector2(377.00003, 56)
+scale = Vector2(0.37, 0.37)
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_erjjl")]
 unique_name_in_owner = true
 position = Vector2(44, 53)
 
+[node name="Goal" type="Area2D" parent="." unique_id=1863933571]
+position = Vector2(405, 198)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=1616634135]
+modulate = Color(1, 0.7666667, 0, 1)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("4_4qryv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1512758630]
+shape = SubResource("RectangleShape2D_ma037")
+
 [connection signal="web_shot" from="Player" to="." method="_on_player_web_shot"]
+[connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]
+[connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
