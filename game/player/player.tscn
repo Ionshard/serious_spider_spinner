@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ddqvit2vahh3j" path="res://assets/sprites/spider-run.png" id="1_obar5"]
 [ext_resource type="Script" uid="uid://defusdtx8yybt" path="res://game/player/player.gd" id="2_b2mth"]
+[ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_8soms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4w0n"]
 atlas = ExtResource("1_obar5")
@@ -14,6 +15,18 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8soms"]
 atlas = ExtResource("1_obar5")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fytw"]
+atlas = ExtResource("3_8soms")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ste8"]
+atlas = ExtResource("3_8soms")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anr75"]
+atlas = ExtResource("3_8soms")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5fytw"]
 animations = [{
@@ -35,6 +48,20 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fytw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ste8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anr75")
+}],
+"loop": true,
+"name": &"zoom",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b2mth"]
@@ -48,7 +75,7 @@ script = ExtResource("2_b2mth")
 sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.031068917
+frame_progress = 0.29903954
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
 shape = SubResource("CircleShape2D_b2mth")

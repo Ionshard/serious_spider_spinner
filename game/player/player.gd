@@ -2,7 +2,9 @@ extends Area2D
 class_name Player
 
 @export var shots = 3
+@export var speed = 200
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 const WEB = preload("uid://c8l4u2mvfe2jq")
 signal web_shot(web: Web)
@@ -27,9 +29,15 @@ func _physics_process(delta: float) -> void:
 			new_web.add_point(new_point)
 			web_shot.emit(new_web)
 			shots -= 1
+			animated_sprite_2d.play("zoom")
+			animated_sprite_2d.rotation = animated_sprite_2d.get_angle_to(new_point) - PI/2
+			ray_cast_2d.clear_exceptions()
+			ray_cast_2d.add_exception(ray_cast_2d.get_collider())
 	
-	if((global_position - new_point).length_squared() < 1):
+	if((global_position - new_point).length_squared() < 5):
 		is_moving = false
+		animated_sprite_2d.play("move")
+		animated_sprite_2d.rotation = 0
 			
 	if(is_moving):
-		global_position = global_position.move_toward(new_point, 500 * delta)
+		global_position = global_position.move_toward(new_point, speed * delta)
