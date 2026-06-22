@@ -2,26 +2,17 @@
 
 [ext_resource type="Script" uid="uid://6hgvg0is0qq5" path="res://game/demo_level/demo_level.gd" id="1_y8kiq"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_erjjl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_erjjl"]
-size = Vector2(20, 141)
+[ext_resource type="PackedScene" uid="uid://bctriafdmx6u6" path="res://game/wall/wall.tscn" id="3_4icor"]
 
 [node name="Demo Level" type="Node2D" unique_id=1304296234]
 script = ExtResource("1_y8kiq")
 
-[node name="Wall" type="Area2D" parent="." unique_id=1779455473]
-position = Vector2(364, 90)
+[node name="Wall" parent="." unique_id=1681724140 instance=ExtResource("3_4icor")]
+position = Vector2(345, 100)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=381719793]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_erjjl")
+[node name="Wall2" parent="." unique_id=2133450731 instance=ExtResource("3_4icor")]
+position = Vector2(102, 189)
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_erjjl")]
 unique_name_in_owner = true
 position = Vector2(44, 53)
-
-[node name="Wall2" type="Area2D" parent="." unique_id=346979673]
-position = Vector2(119, 172)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=258149188]
-shape = SubResource("RectangleShape2D_erjjl")
