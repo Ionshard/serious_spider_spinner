@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b57b0fl545egk"]
+
+[ext_resource type="Texture2D" uid="uid://ddqvit2vahh3j" path="res://assets/sprites/spider-run.png" id="1_obar5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2mth"]
+atlas = ExtResource("1_obar5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8soms"]
+atlas = ExtResource("1_obar5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4w0n"]
+atlas = ExtResource("1_obar5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fytw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2mth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8soms")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4w0n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="AnimatedSprite2D" unique_id=907700845]
+sprite_frames = SubResource("SpriteFrames_5fytw")
+animation = &"idle"
