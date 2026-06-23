@@ -6,6 +6,7 @@ class_name Player
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var shot_indicator: Sprite2D = %ShotIndicator
 const WEB = preload("uid://c8l4u2mvfe2jq")
 signal web_shot(web: Web)
 
@@ -39,3 +40,7 @@ func _physics_process(delta: float) -> void:
 			
 	if(is_moving):
 		global_position = global_position.move_toward(new_point, speed * delta)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		shot_indicator.rotation = get_angle_to(event.position) + PI/2
