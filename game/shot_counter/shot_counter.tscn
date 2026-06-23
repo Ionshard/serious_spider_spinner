@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dgb1f30yft1c8"]
+
+[ext_resource type="Texture2D" uid="uid://cb0wtrr7perc0" path="res://assets/sprites/web-shot.png" id="1_4ibhu"]
+[ext_resource type="Script" uid="uid://boxvwt4s1ytwx" path="res://game/shot_counter/shot_counter.gd" id="1_g43ns"]
+[ext_resource type="LabelSettings" uid="uid://bxeqd7afqjbpy" path="res://resources/ui_label.tres" id="2_g43ns"]
+
+[node name="ShotCounter" type="HBoxContainer" unique_id=351583588]
+offset_right = 27.0
+offset_bottom = 13.0
+script = ExtResource("1_g43ns")
+
+[node name="Webshot" type="TextureRect" parent="." unique_id=1103869592]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_4ibhu")
+stretch_mode = 4
+
+[node name="x" type="Label" parent="." unique_id=1272804078]
+layout_mode = 2
+text = "-"
+label_settings = ExtResource("2_g43ns")
+
+[node name="Amount" type="Label" parent="." unique_id=1218422081]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+label_settings = ExtResource("2_g43ns")
+
+[node name="Control" type="Control" parent="." unique_id=1366370285]
+layout_mode = 2

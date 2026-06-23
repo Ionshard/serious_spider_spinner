@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player: Area2D = %Player
 @onready var webs: Node = %Webs
+@onready var shot_counter: HBoxContainer = %ShotCounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_player_web_shot(web: Web) -> void:
 	webs.add_child(web)
+	shot_counter.set_shot(player.shots)
 
 func _on_goal_area_entered(area: Area2D) -> void:
 	print()

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_erjjl"]
 [ext_resource type="PackedScene" uid="uid://bctriafdmx6u6" path="res://game/wall/wall.tscn" id="3_4icor"]
 [ext_resource type="Texture2D" uid="uid://delet4hkqvc8p" path="res://icon.svg" id="4_4qryv"]
+[ext_resource type="PackedScene" uid="uid://dgb1f30yft1c8" path="res://game/shot_counter/shot_counter.tscn" id="5_ma037"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma037"]
 size = Vector2(18, 18)
@@ -36,6 +37,18 @@ texture = ExtResource("4_4qryv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1512758630]
 shape = SubResource("RectangleShape2D_ma037")
+
+[node name="Control" type="Control" parent="." unique_id=1848717451]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="ShotCounter" parent="Control" unique_id=351583588 instance=ExtResource("5_ma037")]
+unique_name_in_owner = true
+layout_mode = 0
 
 [connection signal="web_shot" from="Player" to="." method="_on_player_web_shot"]
 [connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]

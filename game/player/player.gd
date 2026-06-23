@@ -27,12 +27,10 @@ func _physics_process(delta: float) -> void:
 			var new_web: Line2D = WEB.instantiate()
 			new_web.add_point(global_position)
 			new_web.add_point(new_point)
-			web_shot.emit(new_web)
 			shots -= 1
+			web_shot.emit(new_web)
 			animated_sprite_2d.play("zoom")
 			animated_sprite_2d.rotation = animated_sprite_2d.get_angle_to(new_point) - PI/2
-			ray_cast_2d.clear_exceptions()
-			ray_cast_2d.add_exception(ray_cast_2d.get_collider())
 	
 	if((global_position - new_point).length_squared() < 5):
 		is_moving = false
