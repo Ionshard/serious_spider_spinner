@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c1a4pudcw0drg"]
+
+[ext_resource type="Texture2D" uid="uid://dcb5qeh517jh1" path="res://assets/sprites/spider-cross-web-walk.png" id="1_g0tek"]
+[ext_resource type="FontFile" uid="uid://cee2y40ejpdv0" path="res://assets/fonts/Kenney High Square.ttf" id="2_50scn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0tek"]
+font = ExtResource("2_50scn")
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_7xfm1"]
+font = ExtResource("2_50scn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gk1r"]
+atlas = ExtResource("1_g0tek")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0mc3"]
+atlas = ExtResource("1_g0tek")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ddql"]
+atlas = ExtResource("1_g0tek")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w00cp"]
+atlas = ExtResource("1_g0tek")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mp02"]
+atlas = ExtResource("1_g0tek")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rokh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gk1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0mc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ddql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w00cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mp02")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="Control" unique_id=752852341]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="." unique_id=793760410]
+layout_mode = 1
+offset_right = 420.0
+offset_bottom = 181.0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+
+[node name="Title" type="Label" parent="TitleContainer" unique_id=932126000]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "Serious Spider Spinner"
+label_settings = SubResource("LabelSettings_g0tek")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1632261549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="MarginContainer" parent="HSplitContainer" unique_id=1511344940]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 80
+
+[node name="NewGame" type="Label" parent="HSplitContainer/MainMenu" unique_id=1796180217]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "New Game"
+label_settings = SubResource("LabelSettings_7xfm1")
+vertical_alignment = 1
+
+[node name="QuitGame" type="Label" parent="HSplitContainer/MainMenu" unique_id=1241537905]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Quite Game"
+label_settings = SubResource("LabelSettings_7xfm1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer" unique_id=156199496]
+position = Vector2(346, 140)
+scale = Vector2(1.9960938, 2.109375)
+sprite_frames = SubResource("SpriteFrames_rokh0")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
