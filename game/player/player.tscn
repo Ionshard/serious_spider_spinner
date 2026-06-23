@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddqvit2vahh3j" path="res://assets/sprites/spider-run.png" id="1_obar5"]
 [ext_resource type="Script" uid="uid://defusdtx8yybt" path="res://game/player/player.gd" id="2_b2mth"]
 [ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_8soms"]
+[ext_resource type="Texture2D" uid="uid://cyq03lve7sgeg" path="res://assets/sprites/arrow.png" id="4_a4w0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4w0n"]
 atlas = ExtResource("1_obar5")
@@ -75,7 +76,7 @@ script = ExtResource("2_b2mth")
 sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.29903954
+frame_progress = 0.034453306
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
 shape = SubResource("CircleShape2D_b2mth")
@@ -83,3 +84,10 @@ shape = SubResource("CircleShape2D_b2mth")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=160077605]
 target_position = Vector2(-32, -39)
 collide_with_areas = true
+
+[node name="ShotIndicator" type="Sprite2D" parent="." unique_id=1667833479]
+unique_name_in_owner = true
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_a4w0n")
+offset = Vector2(0, -40)
