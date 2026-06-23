@@ -58,6 +58,7 @@ offset_top = 240.0
 offset_right = 465.0
 offset_bottom = 255.0
 
+[connection signal="web_blast" from="Player" to="." method="_on_player_web_blast"]
 [connection signal="web_shot" from="Player" to="." method="_on_player_web_shot"]
 [connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://c1yfs6w0107j3"]
+
+[ext_resource type="Script" uid="uid://ckpwtlyreq4pa" path="res://game/web_blast/web_blast.gd" id="1_awd3g"]
+[ext_resource type="Texture2D" uid="uid://bkh8t57u2c2bs" path="res://assets/sprites/web-shot.png" id="1_tvfdk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awd3g"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cswh1"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmcs6"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u5ie"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b77u3"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1ya8"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f4mq"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_580j0"]
+atlas = ExtResource("1_tvfdk")
+region = Rect2(56, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4g5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awd3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cswh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmcs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u5ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b77u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1ya8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f4mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_580j0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yciv"]
+radius = 4.472136
+
+[node name="WebBlast" type="RigidBody2D" unique_id=275390285]
+script = ExtResource("1_awd3g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=722398169]
+sprite_frames = SubResource("SpriteFrames_e4g5q")
+autoplay = "default"
+frame_progress = 0.98298645
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045291005]
+shape = SubResource("CircleShape2D_2yciv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=692166330]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

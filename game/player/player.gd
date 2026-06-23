@@ -3,12 +3,16 @@ class_name Player
 
 @export var shots = 3
 @export var speed = 200
+@export var blast_speed = 500
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var shot_indicator: Sprite2D = %ShotIndicator
 const WEB = preload("uid://c8l4u2mvfe2jq")
+const WEB_BLAST = preload("uid://c1yfs6w0107j3")
+
 signal web_shot(web: Web)
+signal web_blast(blast: WebBlast)
 
 var new_point: Vector2
 var is_moving = false
@@ -20,6 +24,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
+	
+	if shots != 0 and Input.is_action_just_pressed("web_blast"):
+		var new_blast: WebBlast = WEB_BLAST.instantiate()
+		new_blast.global_position = global_position
+		new_blast.linear_velocity = global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
+		web_blast.emit(new_blast)
+		
 	
 	if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
 		if(ray_cast_2d.is_colliding()):

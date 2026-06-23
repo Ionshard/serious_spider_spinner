@@ -23,3 +23,7 @@ func _on_goal_area_entered(area: Area2D) -> void:
 	print()
 	if area is Player:
 		get_tree().change_scene_to_file("res://game/end_screen/end_screen.tscn")
+
+
+func _on_player_web_blast(blast: WebBlast) -> void:
+	webs.add_child(blast)

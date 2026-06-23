@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgb1f30yft1c8"]
 
-[ext_resource type="Texture2D" uid="uid://cb0wtrr7perc0" path="res://assets/sprites/web-shot.png" id="1_4ibhu"]
+[ext_resource type="Texture2D" uid="uid://cb0wtrr7perc0" path="res://assets/sprites/web-shot-icon.png" id="1_4ibhu"]
 [ext_resource type="Script" uid="uid://boxvwt4s1ytwx" path="res://game/shot_counter/shot_counter.gd" id="1_g43ns"]
 [ext_resource type="LabelSettings" uid="uid://bxeqd7afqjbpy" path="res://resources/ui_label.tres" id="2_g43ns"]
 
