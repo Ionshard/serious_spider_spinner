@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://c1a4pudcw0drg"]
 
+[ext_resource type="Script" uid="uid://0q1osfjvgw8i" path="res://game/title_screen/title_screen.gd" id="1_50scn"]
 [ext_resource type="Texture2D" uid="uid://dcb5qeh517jh1" path="res://assets/sprites/spider-cross-web-walk.png" id="1_g0tek"]
 [ext_resource type="FontFile" uid="uid://cee2y40ejpdv0" path="res://assets/fonts/Kenney High Square.ttf" id="2_50scn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0tek"]
 font = ExtResource("2_50scn")
 font_size = 23
-
-[sub_resource type="LabelSettings" id="LabelSettings_7xfm1"]
-font = ExtResource("2_50scn")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gk1r"]
 atlas = ExtResource("1_g0tek")
@@ -60,15 +58,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_50scn")
 
-[node name="TitleContainer" type="MarginContainer" parent="." unique_id=793760410]
-layout_mode = 1
-offset_right = 420.0
-offset_bottom = 181.0
-theme_override_constants/margin_left = 60
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=303657683]
+layout_mode = 0
+offset_right = 202.0
+offset_bottom = 113.0
+theme_override_constants/separation = 50
+
+[node name="TitleContainer" type="MarginContainer" parent="VBoxContainer" unique_id=793760410]
+layout_mode = 2
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 
-[node name="Title" type="Label" parent="TitleContainer" unique_id=932126000]
+[node name="Title" type="Label" parent="VBoxContainer/TitleContainer" unique_id=932126000]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -76,39 +79,31 @@ theme_override_font_sizes/font_size = 28
 text = "Serious Spider Spinner"
 label_settings = SubResource("LabelSettings_g0tek")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1632261549]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MainMenu" type="MarginContainer" parent="HSplitContainer" unique_id=1511344940]
+[node name="MainMenu" type="MarginContainer" parent="VBoxContainer" unique_id=1511344940]
 layout_mode = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 5
 
-[node name="NewGame" type="Label" parent="HSplitContainer/MainMenu" unique_id=1796180217]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainMenu" unique_id=1920285815]
 layout_mode = 2
-size_flags_horizontal = 0
+
+[node name="NewGame" type="Button" parent="VBoxContainer/MainMenu/VBoxContainer" unique_id=123269134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_50scn")
 text = "New Game"
-label_settings = SubResource("LabelSettings_7xfm1")
-vertical_alignment = 1
 
-[node name="QuitGame" type="Label" parent="HSplitContainer/MainMenu" unique_id=1241537905]
+[node name="QuitGame" type="Button" parent="VBoxContainer/MainMenu/VBoxContainer" unique_id=1391934528]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "Quite Game"
-label_settings = SubResource("LabelSettings_7xfm1")
+theme_override_fonts/font = ExtResource("2_50scn")
+text = "Quit Game"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer" unique_id=156199496]
-position = Vector2(346, 140)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156199496]
+position = Vector2(344, 135)
 scale = Vector2(1.9960938, 2.109375)
 sprite_frames = SubResource("SpriteFrames_rokh0")
 autoplay = "default"
 frame = 4
 frame_progress = 1.0
+
+[connection signal="pressed" from="VBoxContainer/MainMenu/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]
