@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://keljgahxq46q"]
 
 [ext_resource type="FontFile" uid="uid://cee2y40ejpdv0" path="res://assets/fonts/Kenney High Square.ttf" id="1_dw0qy"]
+[ext_resource type="Script" uid="uid://byr3pioh30sii" path="res://game/end_screen/end_screen.gd" id="1_udfs8"]
 [ext_resource type="Texture2D" uid="uid://ddqvit2vahh3j" path="res://assets/sprites/spider-run.png" id="2_udfs8"]
 [ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_t66qx"]
 
@@ -77,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+script = ExtResource("1_udfs8")
 
 [node name="Win" type="Label" parent="." unique_id=1346041564]
 layout_mode = 1
@@ -129,3 +131,21 @@ position = Vector2(431, 177)
 sprite_frames = SubResource("SpriteFrames_x7uj5")
 animation = &"move"
 autoplay = "move"
+
+[node name="ReturnToMenu" type="Button" parent="." unique_id=923803884]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -32.0
+offset_right = 43.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_dw0qy")
+text = "Return to Menu"
+
+[connection signal="pressed" from="ReturnToMenu" to="." method="_on_return_to_menu_pressed"]

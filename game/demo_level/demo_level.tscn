@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bctriafdmx6u6" path="res://game/wall/wall.tscn" id="3_4icor"]
 [ext_resource type="Texture2D" uid="uid://delet4hkqvc8p" path="res://icon.svg" id="4_4qryv"]
 [ext_resource type="PackedScene" uid="uid://dgb1f30yft1c8" path="res://game/shot_counter/shot_counter.tscn" id="5_ma037"]
+[ext_resource type="PackedScene" uid="uid://c1fyiltos0bpb" path="res://game/ui/reset_button/reset_button.tscn" id="6_88bo5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma037"]
 size = Vector2(18, 18)
@@ -49,6 +50,13 @@ offset_bottom = 50.0
 [node name="ShotCounter" parent="Control" unique_id=351583588 instance=ExtResource("5_ma037")]
 unique_name_in_owner = true
 layout_mode = 0
+
+[node name="ResetButton" parent="Control" unique_id=1148275971 instance=ExtResource("6_88bo5")]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 240.0
+offset_right = 465.0
+offset_bottom = 255.0
 
 [connection signal="web_shot" from="Player" to="." method="_on_player_web_shot"]
 [connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]
