@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 		var new_blast: WebBlast = WEB_BLAST.instantiate()
 		new_blast.global_position = shot_spawn.global_position
 		new_blast.linear_velocity = new_blast.global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
+		shots -= 1
 		web_blast.emit(new_blast)
 		
 	

@@ -17,6 +17,7 @@ func _on_player_web_shot(web: Web) -> void:
 
 func _on_player_web_blast(blast: WebBlast) -> void:
 	web_blasts.add_child(blast)
+	shot_counter.set_shot(player.shots)
 	blast.connect('body_entered', _on_blast_body_entered)
 	
 func _on_blast_body_entered(body: Node2D) -> void:
