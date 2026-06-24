@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://b5fpsj5d54qge"]
+
+[ext_resource type="Texture2D" uid="uid://3furok7ysxc8" path="res://assets/sprites/light-switch/light-switch-toggle-animation.png" id="1_if1a0"]
+
+[resource]
+atlas = ExtResource("1_if1a0")
+region = Rect2(32, 0, 32, 32)

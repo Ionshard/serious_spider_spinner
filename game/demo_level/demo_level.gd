@@ -15,11 +15,17 @@ func _on_player_web_shot(web: Web) -> void:
 	webs.add_child(web)
 	shot_counter.set_shot(player.shots)
 
-func _on_goal_area_entered(area: Area2D) -> void:
-	print()
-	if area is Player:
-		get_tree().change_scene_to_file("res://game/end_screen/end_screen.tscn")
-
-
 func _on_player_web_blast(blast: WebBlast) -> void:
 	web_blasts.add_child(blast)
+	blast.connect('body_entered', _on_blast_body_entered)
+	
+func _on_blast_body_entered(body: Node2D) -> void:
+	if body == %LightSwitch:
+		%LightBulb.play('default')
+		%LightBulb2.play('default')
+		var sprite = %LightSwitch.get_child(0) as Sprite2D
+		sprite.texture = load("res://resources/light_on.tres")
+
+func _on_light_bulb_animation_finished() -> void:
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("uid://keljgahxq46q")
