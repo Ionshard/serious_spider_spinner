@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://6gu0abbmql8x" path="res://game/web/web.gd" id="1_bd2fr"]
 
 [node name="Web" type="Line2D" unique_id=890783367]
-width = 3.0
+width = 2.0
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("1_bd2fr")

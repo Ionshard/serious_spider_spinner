@@ -91,3 +91,7 @@ rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_a4w0n")
 offset = Vector2(0, -40)
+
+[node name="ShotSpawn" type="Marker2D" parent="ShotIndicator" unique_id=1788853341]
+unique_name_in_owner = true
+position = Vector2(-1.8358783e-06, -42)

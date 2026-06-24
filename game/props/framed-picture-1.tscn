@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bywgu6eqoopht"]
+
+[ext_resource type="Texture2D" uid="uid://dw6qsddtl024k" path="res://assets/sprites/furniture/framed-picture-1.png" id="1_okfa5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3spf"]
+size = Vector2(37, 18)
+
+[node name="FramedPicture1" type="StaticBody2D" unique_id=1726977158]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627759589]
+texture = ExtResource("1_okfa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1104924293]
+position = Vector2(-0.5, -8)
+shape = SubResource("RectangleShape2D_c3spf")

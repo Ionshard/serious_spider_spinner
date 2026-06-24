@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bk1f5k7upfw1a"]
+
+[ext_resource type="Texture2D" uid="uid://3furok7ysxc8" path="res://assets/sprites/light-switch/light-switch-toggle-animation.png" id="1_85dm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sltwb"]
+atlas = ExtResource("1_85dm3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vhcj"]
+size = Vector2(8, 11)
+
+[node name="LightSwitch" type="StaticBody2D" unique_id=1429434999]
+collision_layer = 4
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=105366312]
+texture = SubResource("AtlasTexture_sltwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1608690504]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2vhcj")

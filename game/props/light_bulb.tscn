@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bu31eavxdfapo"]
+
+[ext_resource type="Texture2D" uid="uid://coae1hpsvtof8" path="res://assets/sprites/light-bulbs/light-bulb-turning-on-with-many-flies.png" id="1_0lcdk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kxmt"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak8pu"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq0e3"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78jlt"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkto4"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heq7i"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf14p"]
+atlas = ExtResource("1_0lcdk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jg1fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kxmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak8pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78jlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkto4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heq7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf14p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightBulb" type="AnimatedSprite2D" unique_id=2017325752]
+sprite_frames = SubResource("SpriteFrames_jg1fu")

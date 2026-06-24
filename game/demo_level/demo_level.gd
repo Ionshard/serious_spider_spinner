@@ -2,12 +2,8 @@ extends Node2D
 
 @onready var player: Area2D = %Player
 @onready var webs: Node = %Webs
-@onready var shot_counter: HBoxContainer = %ShotCounter
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+@onready var shot_counter = %ShotCounter
+@onready var web_blasts: Node2D = %WebBlasts
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,4 +22,4 @@ func _on_goal_area_entered(area: Area2D) -> void:
 
 
 func _on_player_web_blast(blast: WebBlast) -> void:
-	webs.add_child(blast)
+	web_blasts.add_child(blast)

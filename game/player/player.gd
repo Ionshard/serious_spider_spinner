@@ -8,6 +8,7 @@ class_name Player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var shot_indicator: Sprite2D = %ShotIndicator
+@onready var shot_spawn: Marker2D = %ShotSpawn
 const WEB = preload("uid://c8l4u2mvfe2jq")
 const WEB_BLAST = preload("uid://c1yfs6w0107j3")
 
@@ -27,8 +28,8 @@ func _physics_process(delta: float) -> void:
 	
 	if shots != 0 and Input.is_action_just_pressed("web_blast"):
 		var new_blast: WebBlast = WEB_BLAST.instantiate()
-		new_blast.global_position = global_position
-		new_blast.linear_velocity = global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
+		new_blast.global_position = shot_spawn.global_position
+		new_blast.linear_velocity = new_blast.global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
 		web_blast.emit(new_blast)
 		
 	
