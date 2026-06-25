@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 		web_blast.emit(new_blast)
 		
 	
-	if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
+	#if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
+	if shots != 0 and Input.is_action_just_pressed('spin_web'):
 		if(ray_cast_2d.is_colliding()):
 			var collision_point = ray_cast_2d.get_collision_point()
 			var collision_normal = ray_cast_2d.get_collision_normal()
@@ -49,7 +50,10 @@ func _physics_process(delta: float) -> void:
 			new_rotation = collision_normal.angle() + PI/2
 			is_moving = true
 			var new_web: Line2D = WEB.instantiate()
-			new_web.add_point(prev_collision_point)
+			if is_moving:
+				new_web.add_point(global_position)
+			else:
+				new_web.add_point(prev_collision_point)
 			new_web.add_point(collision_point)
 			prev_collision_point = collision_point
 			shots -= 1
