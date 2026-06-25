@@ -10,6 +10,9 @@ var ui: UI
 var webs: Node2D
 var web_blasts: Node2D
 
+func has_blasts() -> bool:
+	return web_blasts.get_child_count() > 0
+
 func _ready() -> void:
 	ui = UI_SCENE.instantiate()
 	add_child(ui)
@@ -40,6 +43,7 @@ func _on_player_web_blast(blast: WebBlast) -> void:
 	
 func _on_blast_body_entered(body: Node2D) -> void:
 	if body is LightSwitch:
+		player.is_winning = true
 		var sprite = body.get_node("%Sprite2D")
 		sprite.texture = load("res://resources/light_on.tres")
 		

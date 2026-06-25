@@ -111,6 +111,7 @@ text = "Quit Game"
 layout_mode = 2
 
 [node name="CuteMode" type="CheckButton" parent="VBoxContainer/MainMenu/VBoxContainer2/HBoxContainer" unique_id=1928956608]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/MainMenu/VBoxContainer2/HBoxContainer" unique_id=627645949]

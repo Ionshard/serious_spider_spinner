@@ -22,6 +22,7 @@ var new_point: Vector2
 var new_rotation: float
 var is_moving = false
 var is_dead = false
+var is_winning = false
 
 func _show_bow(visible: bool) -> void:
 	if not Config.cuteMode:
@@ -75,7 +76,7 @@ func _physics_process(delta: float) -> void:
 		_show_bow(true)
 		animated_sprite_2d.rotation = new_rotation
 		print("landeded with shots: ", str(shots))
-		if shots == 0:
+		if shots == 0 and not get_parent().has_blasts():
 			die()
 			
 	if(is_moving):
@@ -86,6 +87,7 @@ func _input(event: InputEvent) -> void:
 		shot_indicator.rotation = get_angle_to(event.position) + PI/2
 
 func die() -> void:
+	if is_winning: return
 	is_dead = true
 	if not is_moving:
 		_be_dead()

@@ -106,6 +106,12 @@ sprite_frames = SubResource("SpriteFrames_5fytw")
 animation = &"die"
 autoplay = "move"
 
+[node name="PinkBow" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1256605835]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -7)
+texture = ExtResource("6_4ste8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
 shape = SubResource("CircleShape2D_b2mth")
 
@@ -123,9 +129,3 @@ offset = Vector2(0, -40)
 [node name="ShotSpawn" type="Marker2D" parent="ShotIndicator" unique_id=1788853341]
 unique_name_in_owner = true
 position = Vector2(-1.9073486e-06, -48)
-
-[node name="PinkBow" type="Sprite2D" parent="." unique_id=1256605835]
-unique_name_in_owner = true
-visible = false
-position = Vector2(0, -7)
-texture = ExtResource("6_4ste8")
