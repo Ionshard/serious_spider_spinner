@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_packed(new_game_scene)
+	LevelSwitcher.reset()
 
 
 func _on_quit_game_pressed() -> void:
