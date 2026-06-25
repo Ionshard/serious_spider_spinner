@@ -19,7 +19,7 @@ var prev_collision_point: Vector2
 var new_point: Vector2
 var new_rotation: float
 var is_moving = false
-
+var is_dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +28,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
 	
-	if not is_moving and ray_cast_2d.is_colliding():
+	if ray_cast_2d.is_colliding():
 		shot_indicator.modulate = Color(1, 1, 1, 0.7)
 	else:
 		shot_indicator.modulate = Color(0.3, 0.3, 0.3, 0.5)
@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 		new_blast.linear_velocity = new_blast.global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
 		shots -= 1
 		web_blast.emit(new_blast)
-		
 	
 	#if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
 	if shots != 0 and Input.is_action_just_pressed('spin_web'):
@@ -61,10 +60,13 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("zoom")
 			animated_sprite_2d.rotation = animated_sprite_2d.get_angle_to(new_point) - PI/2
 	
-	if((global_position - new_point).length_squared() < 5):
+	if is_moving and (global_position - new_point).length_squared() < 5:
 		is_moving = false
 		animated_sprite_2d.play("move")
 		animated_sprite_2d.rotation = new_rotation
+		print("landeded with shots: ", str(shots))
+		if shots == 0:
+			die()
 			
 	if(is_moving):
 		global_position = global_position.move_toward(new_point, speed * delta)
@@ -72,3 +74,16 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		shot_indicator.rotation = get_angle_to(event.position) + PI/2
+
+func die() -> void:
+	is_dead = true
+	if not is_moving:
+		_be_dead()
+		
+func _be_dead() -> void:
+	animated_sprite_2d.play('die')
+	animated_sprite_2d.connect('animation_finished', _after_dead)
+
+func _after_dead() -> void:
+	await get_tree().create_timer(2).timeout
+	get_tree().reload_current_scene()

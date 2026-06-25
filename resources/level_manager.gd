@@ -36,6 +36,7 @@ func _on_player_web_blast(blast: WebBlast) -> void:
 	web_blasts.add_child(blast)
 	ui.set_shots(player.shots)
 	blast.connect('body_entered', _on_blast_body_entered)
+	blast.connect('tree_exited', _on_blast_tree_exited)
 	
 func _on_blast_body_entered(body: Node2D) -> void:
 	if body is LightSwitch:
@@ -54,6 +55,10 @@ func _on_blast_body_entered(body: Node2D) -> void:
 			light_bulbs[0].connect('animation_finished', _on_light_bulb_animation_finished)
 			return
 		_trigger_next_scene()
+
+func _on_blast_tree_exited() -> void:
+	if webs.get_children().size() == 0 and player.shots == 0:
+		player.die()
 
 func _on_light_bulb_animation_finished() -> void:
 	_trigger_next_scene()
