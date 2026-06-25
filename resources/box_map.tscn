@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://g6ycp0k62mid"]
+
+[ext_resource type="TileSet" uid="uid://dhhpe14wodc6b" path="res://resources/box_tile_set.tres" id="1_wia0e"]
+
+[node name="BoxMap" type="TileMapLayer" unique_id=1783221475]
+tile_set = ExtResource("1_wia0e")
+use_kinematic_bodies = true

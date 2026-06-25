@@ -15,21 +15,23 @@ const WEB_BLAST = preload("uid://c1yfs6w0107j3")
 signal web_shot(web: Web)
 signal web_blast(blast: WebBlast)
 
+var prev_collision_point: Vector2
 var new_point: Vector2
+var new_rotation: float
 var is_moving = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	prev_collision_point = global_position
 
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
 	
 	if not is_moving and ray_cast_2d.is_colliding():
-		shot_indicator.modulate = Color(1, 1, 1)
+		shot_indicator.modulate = Color(1, 1, 1, 0.7)
 	else:
-		shot_indicator.modulate = Color(0.3, 0.3, 0.3)
+		shot_indicator.modulate = Color(0.3, 0.3, 0.3, 0.5)
 	
 	if shots != 0 and Input.is_action_just_pressed("web_blast"):
 		var new_blast: WebBlast = WEB_BLAST.instantiate()
@@ -41,11 +43,15 @@ func _physics_process(delta: float) -> void:
 	
 	if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
 		if(ray_cast_2d.is_colliding()):
-			new_point = ray_cast_2d.get_collision_point() - ray_cast_2d.get_collision_normal()
+			var collision_point = ray_cast_2d.get_collision_point()
+			var collision_normal = ray_cast_2d.get_collision_normal()
+			new_point = collision_point + (collision_normal*3)
+			new_rotation = collision_normal.angle() + PI/2
 			is_moving = true
 			var new_web: Line2D = WEB.instantiate()
-			new_web.add_point(global_position)
-			new_web.add_point(new_point)
+			new_web.add_point(prev_collision_point)
+			new_web.add_point(collision_point)
+			prev_collision_point = collision_point
 			shots -= 1
 			web_shot.emit(new_web)
 			animated_sprite_2d.play("zoom")
@@ -54,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	if((global_position - new_point).length_squared() < 5):
 		is_moving = false
 		animated_sprite_2d.play("move")
-		animated_sprite_2d.rotation = 0
+		animated_sprite_2d.rotation = new_rotation
 			
 	if(is_moving):
 		global_position = global_position.move_toward(new_point, speed * delta)

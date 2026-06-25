@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" format=3 uid="uid://dhhpe14wodc6b"]
+
+[ext_resource type="Texture2D" uid="uid://chd52q83vfg8v" path="res://assets/sprites/furniture/wood-box.png" id="1_xwwmn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnimu"]
+resource_name = "Block"
+texture = ExtResource("1_xwwmn")
+margins = Vector2i(8, 15)
+texture_region_size = Vector2i(19, 17)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, 8, -8.5, -8, 8.5, -8, 8.5, 8)
+
+[resource]
+tile_size = Vector2i(17, 16)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 10
+sources/0 = SubResource("TileSetAtlasSource_vnimu")
