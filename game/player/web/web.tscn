@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8l4u2mvfe2jq"]
 
-[ext_resource type="Script" uid="uid://6gu0abbmql8x" path="res://game/web/web.gd" id="1_bd2fr"]
+[ext_resource type="Script" uid="uid://6gu0abbmql8x" path="res://game/player/web/web.gd" id="1_bd2fr"]
 
 [node name="Web" type="Line2D" unique_id=890783367]
 width = 2.0

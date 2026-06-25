@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://604qok451tqu"]
+
+[ext_resource type="Texture2D" uid="uid://dhgbwkrhv21pa" path="res://assets/sprites/light-bulbs/light-bulb-turning-on-with-one-fly.png" id="1_skyss"]
+[ext_resource type="Script" uid="uid://d3ffxpb4yjbeb" path="res://game/props/light_bulb.gd" id="2_cll6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxxsf"]
+atlas = ExtResource("1_skyss")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ibig"]
+atlas = ExtResource("1_skyss")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ptgw"]
+atlas = ExtResource("1_skyss")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n80m"]
+atlas = ExtResource("1_skyss")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jobv"]
+atlas = ExtResource("1_skyss")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecay7"]
+atlas = ExtResource("1_skyss")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktlmf"]
+atlas = ExtResource("1_skyss")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7wga"]
+atlas = ExtResource("1_skyss")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pr2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxxsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ibig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ptgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n80m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jobv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecay7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktlmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7wga")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightBulb2" type="AnimatedSprite2D" unique_id=1563169927]
+rotation = 3.1415927
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6pr2c")
+script = ExtResource("2_cll6i")

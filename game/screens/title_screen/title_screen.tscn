@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c1a4pudcw0drg"]
 
-[ext_resource type="Script" uid="uid://0q1osfjvgw8i" path="res://game/title_screen/title_screen.gd" id="1_50scn"]
+[ext_resource type="Script" uid="uid://0q1osfjvgw8i" path="res://game/screens/title_screen/title_screen.gd" id="1_50scn"]
 [ext_resource type="Texture2D" uid="uid://dcb5qeh517jh1" path="res://assets/sprites/spider-cross-web-walk.png" id="1_g0tek"]
 [ext_resource type="FontFile" uid="uid://cee2y40ejpdv0" path="res://assets/fonts/Kenney High Square.ttf" id="2_50scn"]
+[ext_resource type="PackedScene" uid="uid://dsf4w82teuwbu" path="res://game/levels/level_1.tscn" id="2_ej2s8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0tek"]
 font = ExtResource("2_50scn")
@@ -59,6 +60,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_50scn")
+new_game_scene = ExtResource("2_ej2s8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=303657683]
 layout_mode = 0

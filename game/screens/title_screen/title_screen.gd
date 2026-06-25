@@ -1,5 +1,6 @@
-extends RigidBody2D
-class_name WebBlast
+extends Control
+
+@export var new_game_scene: PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,9 +13,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()
+func _on_new_game_pressed() -> void:
+	get_tree().change_scene_to_packed(new_game_scene)
 
 
-func _on_body_entered(body: Node) -> void:
-	queue_free()
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()

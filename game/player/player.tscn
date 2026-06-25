@@ -69,6 +69,7 @@ animations = [{
 radius = 11.401754
 
 [node name="Player" type="Area2D" unique_id=1471301588]
+z_index = 1
 collision_layer = 2
 script = ExtResource("2_b2mth")
 
@@ -94,4 +95,4 @@ offset = Vector2(0, -40)
 
 [node name="ShotSpawn" type="Marker2D" parent="ShotIndicator" unique_id=1788853341]
 unique_name_in_owner = true
-position = Vector2(-1.8358783e-06, -42)
+position = Vector2(-1.9073486e-06, -48)

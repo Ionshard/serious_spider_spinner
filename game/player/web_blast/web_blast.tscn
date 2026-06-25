@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1yfs6w0107j3"]
 
-[ext_resource type="Script" uid="uid://ckpwtlyreq4pa" path="res://game/web_blast/web_blast.gd" id="1_awd3g"]
+[ext_resource type="Script" uid="uid://ckpwtlyreq4pa" path="res://game/player/web_blast/web_blast.gd" id="1_awd3g"]
 [ext_resource type="Texture2D" uid="uid://bkh8t57u2c2bs" path="res://assets/sprites/web-shot.png" id="1_tvfdk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awd3g"]

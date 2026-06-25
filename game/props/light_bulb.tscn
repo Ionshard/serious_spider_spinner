@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bu31eavxdfapo"]
 
 [ext_resource type="Texture2D" uid="uid://coae1hpsvtof8" path="res://assets/sprites/light-bulbs/light-bulb-turning-on-with-many-flies.png" id="1_0lcdk"]
+[ext_resource type="Script" uid="uid://d3ffxpb4yjbeb" path="res://game/props/light_bulb.gd" id="2_0kxmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kxmt"]
 atlas = ExtResource("1_0lcdk")
@@ -60,4 +61,7 @@ animations = [{
 }]
 
 [node name="LightBulb" type="AnimatedSprite2D" unique_id=2017325752]
+rotation = 3.1415927
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jg1fu")
+script = ExtResource("2_0kxmt")

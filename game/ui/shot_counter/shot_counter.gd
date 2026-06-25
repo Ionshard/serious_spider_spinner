@@ -11,5 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func set_shot(amount: int) -> void:
+func set_shots(amount: int) -> void:
 	amount_label.text = str(amount)

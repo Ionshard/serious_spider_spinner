@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ds020ov238vb5"]
+
+[ext_resource type="PackedScene" uid="uid://dgb1f30yft1c8" path="res://game/ui/shot_counter/shot_counter.tscn" id="1_jxga3"]
+[ext_resource type="Script" uid="uid://3xvdl7fscprb" path="res://game/ui/ui.gd" id="1_kvrpj"]
+[ext_resource type="PackedScene" uid="uid://c1fyiltos0bpb" path="res://game/ui/reset_button/reset_button.tscn" id="2_kvrpj"]
+
+[node name="UI" type="Control" unique_id=617351929]
+top_level = true
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_kvrpj")
+
+[node name="ShotCounter" parent="." unique_id=1365372328 instance=ExtResource("1_jxga3")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 216.0
+offset_top = -1.0
+offset_right = 241.0
+offset_bottom = 12.0
+
+[node name="ResetButton" parent="." unique_id=1148275971 instance=ExtResource("2_kvrpj")]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 240.0
+offset_right = 465.0
+offset_bottom = 255.0

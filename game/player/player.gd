@@ -26,6 +26,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
 	
+	if ray_cast_2d.is_colliding():
+		shot_indicator.modulate = Color(1, 1, 1)
+	else:
+		shot_indicator.modulate = Color(0.3, 0.3, 0.3)
+	
 	if shots != 0 and Input.is_action_just_pressed("web_blast"):
 		var new_blast: WebBlast = WEB_BLAST.instantiate()
 		new_blast.global_position = shot_spawn.global_position

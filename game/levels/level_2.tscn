@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d0fnc4lr71wg2"]
+
+[ext_resource type="PackedScene" uid="uid://p7y6m8t20cgh" path="res://game/game_manager/game_manager.tscn" id="1_2f1k2"]
+[ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_7dx7g"]
+[ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="3_7neg2"]
+[ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="4_6jjde"]
+[ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="4_uivyf"]
+[ext_resource type="Texture2D" uid="uid://cmgbv2wsxv2el" path="res://assets/sprites/furniture/dresser.png" id="5_go8g1"]
+[ext_resource type="Texture2D" uid="uid://dw6qsddtl024k" path="res://assets/sprites/furniture/framed-picture-1.png" id="6_2a8w4"]
+[ext_resource type="Texture2D" uid="uid://b4q6d0ywtbgf4" path="res://assets/sprites/furniture/closed-door.png" id="7_ylsm2"]
+[ext_resource type="PackedScene" uid="uid://604qok451tqu" path="res://game/props/light_bulb_2.tscn" id="9_7c6gx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u51cf"]
+size = Vector2(80, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6trp"]
+size = Vector2(147, 73)
+
+[node name="Level2" type="Node2D" unique_id=318854091]
+
+[node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_7dx7g")]
+position = Vector2(55, 56)
+
+[node name="GameManager" parent="." unique_id=681622469 node_paths=PackedStringArray("player", "light_switch", "light_bulbs") instance=ExtResource("1_2f1k2")]
+player = NodePath("../Player")
+light_switch = NodePath("../LightSwitch")
+light_bulbs = [NodePath("../LightBulb"), NodePath("../LightBulb2")]
+
+[node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("4_6jjde")]
+position = Vector2(70, 8)
+rotation = -3.1415925
+
+[node name="SpiderWeb" type="Sprite2D" parent="." unique_id=694921188]
+position = Vector2(33, 44)
+texture = ExtResource("4_uivyf")
+
+[node name="Dresser" type="Sprite2D" parent="." unique_id=1570108312]
+position = Vector2(143, 184.5)
+scale = Vector2(1.34375, 1.3359375)
+texture = ExtResource("5_go8g1")
+
+[node name="FramedPicture1" type="Sprite2D" parent="." unique_id=432041079]
+position = Vector2(298, 109)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("6_2a8w4")
+
+[node name="ClosedDoor" type="Sprite2D" parent="." unique_id=383743787]
+modulate = Color(0.39688927, 0.39688927, 0.39688924, 1)
+position = Vector2(396, 184)
+scale = Vector2(2.671875, 2.671875)
+texture = ExtResource("7_ylsm2")
+
+[node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("3_7neg2")]
+position = Vector2(450, 203)
+
+[node name="LightBulb2" parent="." unique_id=1563169927 instance=ExtResource("9_7c6gx")]
+position = Vector2(440, 10)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1089592660]
+position = Vector2(107.04226, 153.97018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=75165591]
+position = Vector2(41.95774, 57.029816)
+shape = SubResource("RectangleShape2D_u51cf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1176693930]
+position = Vector2(188.45773, -77.470184)
+shape = SubResource("RectangleShape2D_p6trp")
