@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://chd52q83vfg8v" path="res://assets/sprites/furniture/wood-box.png" id="6_l6jt4"]
 [ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="8_75eok"]
 [ext_resource type="PackedScene" uid="uid://604qok451tqu" path="res://game/props/light_bulb_2.tscn" id="9_d7cbn"]
+[ext_resource type="Texture2D" uid="uid://dgd0bbguxtj7f" path="res://assets/sprites/furniture/bulletin-board.png" id="9_fq0h3"]
+[ext_resource type="Texture2D" uid="uid://d3a8gkla3y67n" path="res://assets/sprites/spider-flavor-text.png" id="10_g1txn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkxey"]
 size = Vector2(85, 77)
@@ -25,7 +27,7 @@ position = Vector2(87, 9)
 rotation = -3.1415925
 
 [node name="LightBulb2" parent="." unique_id=1563169927 instance=ExtResource("9_d7cbn")]
-position = Vector2(402, 10)
+position = Vector2(115, 9)
 rotation = -3.1415925
 
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=1842672988]
@@ -33,15 +35,24 @@ position = Vector2(38, 45)
 texture = ExtResource("3_g1txn")
 
 [node name="WoodBox" type="Sprite2D" parent="." unique_id=1324500403]
-position = Vector2(234, 199.00002)
+position = Vector2(73.000015, 192)
 scale = Vector2(4.499999, 4.499999)
 texture = ExtResource("6_l6jt4")
 
 [node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("8_75eok")]
-position = Vector2(91, 168)
+position = Vector2(227, 229.99998)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2054731899]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=4441337]
-position = Vector2(240.5, 232.5)
+position = Vector2(80, 225)
 shape = SubResource("RectangleShape2D_qkxey")
+
+[node name="BulletinBoard" type="Sprite2D" parent="." unique_id=1010872845]
+position = Vector2(335, 96)
+texture = ExtResource("9_fq0h3")
+
+[node name="SpiderFlavorText" type="Sprite2D" parent="." unique_id=1472771424]
+position = Vector2(286, 59.000004)
+scale = Vector2(0.62121207, 0.6212121)
+texture = ExtResource("10_g1txn")
