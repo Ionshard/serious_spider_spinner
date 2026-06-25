@@ -5,7 +5,8 @@
 [ext_resource type="LabelSettings" uid="uid://bxeqd7afqjbpy" path="res://resources/ui_label.tres" id="2_g43ns"]
 
 [node name="Panel" type="Panel" unique_id=1365372328]
-offset_right = 25.0
+custom_minimum_size = Vector2(30, 0)
+offset_right = 30.0
 offset_bottom = 13.0
 script = ExtResource("1_g43ns")
 
@@ -23,7 +24,7 @@ stretch_mode = 4
 
 [node name="x" type="Label" parent="ShotCounter" unique_id=1272804078]
 layout_mode = 2
-text = "-"
+text = "x"
 label_settings = ExtResource("2_g43ns")
 
 [node name="Amount" type="Label" parent="ShotCounter" unique_id=1218422081]

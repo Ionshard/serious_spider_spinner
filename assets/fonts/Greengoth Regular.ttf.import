@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cee2y40ejpdv0"
-path="res://.godot/imported/Kenney High Square.ttf-0a7aa0f2bb7ceeb745de776e0480eaf0.fontdata"
+uid="uid://djw8prjdycr8b"
+path="res://.godot/imported/Greengoth Regular.ttf-c35b118de77fec21e9fb532357551b04.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Kenney High Square.ttf"
-dest_files=["res://.godot/imported/Kenney High Square.ttf-0a7aa0f2bb7ceeb745de776e0480eaf0.fontdata"]
+source_file="res://assets/fonts/Greengoth Regular.ttf"
+dest_files=["res://.godot/imported/Greengoth Regular.ttf-c35b118de77fec21e9fb532357551b04.fontdata"]
 
 [params]
 

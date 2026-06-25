@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1fyiltos0bpb"]
 
 [ext_resource type="Script" uid="uid://d0bwr3bdacgt0" path="res://game/ui/reset_button/reset_button.gd" id="1_lr8xc"]
-[ext_resource type="FontFile" uid="uid://cee2y40ejpdv0" path="res://assets/fonts/Kenney High Square.ttf" id="1_qsd8x"]
+[ext_resource type="FontFile" uid="uid://djw8prjdycr8b" path="res://assets/fonts/Greengoth Regular.ttf" id="1_qsd8x"]
 
 [node name="ResetButton" type="Button" unique_id=1148275971]
 offset_right = 8.0
