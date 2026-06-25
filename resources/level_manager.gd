@@ -1,8 +1,6 @@
 extends Node2D
 class_name LevelManager
 
-@export var next_scene: PackedScene = preload("uid://keljgahxq46q")
-
 const UI_SCENE = preload("uid://ds020ov238vb5")
 
 var player: Player
@@ -69,4 +67,4 @@ func _on_light_bulb_animation_finished() -> void:
 	
 func _trigger_next_scene() -> void:
 	await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_packed(next_scene)
+	LevelSwitcher.next_level()

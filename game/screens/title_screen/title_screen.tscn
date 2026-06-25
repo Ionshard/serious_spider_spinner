@@ -116,7 +116,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/MainMenu/VBoxContainer2/HBoxContainer" unique_id=627645949]
 layout_mode = 2
-text = "\"Arachnophobia\" Mode"
+text = "\"Arachnophobia\"  Mode"
 label_settings = SubResource("LabelSettings_ej2s8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156199496]
