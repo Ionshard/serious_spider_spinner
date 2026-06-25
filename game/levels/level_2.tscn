@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0fnc4lr71wg2"]
 
-[ext_resource type="PackedScene" uid="uid://p7y6m8t20cgh" path="res://game/game_manager/game_manager.tscn" id="1_2f1k2"]
+[ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://resources/level_manager.gd" id="1_uivyf"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_7dx7g"]
 [ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="3_7neg2"]
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="4_6jjde"]
@@ -16,15 +16,12 @@ size = Vector2(80, 114)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6trp"]
 size = Vector2(147, 73)
 
-[node name="Level2" type="Node2D" unique_id=318854091]
+[node name="Level2" type="Node2D" unique_id=1372629675]
+script = ExtResource("1_uivyf")
+metadata/_custom_type_script = "uid://buckea7j4edy6"
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_7dx7g")]
 position = Vector2(55, 56)
-
-[node name="GameManager" parent="." unique_id=681622469 node_paths=PackedStringArray("player", "light_switch", "light_bulbs") instance=ExtResource("1_2f1k2")]
-player = NodePath("../Player")
-light_switch = NodePath("../LightSwitch")
-light_bulbs = [NodePath("../LightBulb"), NodePath("../LightBulb2")]
 
 [node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("4_6jjde")]
 position = Vector2(70, 8)
@@ -55,6 +52,7 @@ position = Vector2(450, 203)
 
 [node name="LightBulb2" parent="." unique_id=1563169927 instance=ExtResource("9_7c6gx")]
 position = Vector2(440, 10)
+rotation = -3.1415925
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1089592660]
 position = Vector2(107.04226, 153.97018)

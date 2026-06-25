@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://p7y6m8t20cgh"]
-
-[ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://game/game_manager/game_manager.gd" id="1_t4yid"]
-[ext_resource type="PackedScene" uid="uid://keljgahxq46q" path="res://game/screens/end_screen/end_screen.tscn" id="2_nqbn2"]
-
-[node name="GameManager" type="Node" unique_id=681622469]
-process_priority = 1
-script = ExtResource("1_t4yid")
-next_scene = ExtResource("2_nqbn2")

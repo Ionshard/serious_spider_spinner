@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsf4w82teuwbu"]
 
-[ext_resource type="PackedScene" uid="uid://p7y6m8t20cgh" path="res://game/game_manager/game_manager.tscn" id="1_qkxey"]
+[ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://resources/level_manager.gd" id="1_rifvl"]
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="2_fq0h3"]
 [ext_resource type="PackedScene" uid="uid://d0fnc4lr71wg2" path="res://game/levels/level_2.tscn" id="2_g1txn"]
 [ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="3_g1txn"]
@@ -12,11 +12,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkxey"]
 size = Vector2(85, 77)
 
-[node name="Level1" type="Node2D" unique_id=199144594]
-
-[node name="GameManager" parent="." unique_id=681622469 node_paths=PackedStringArray("player") instance=ExtResource("1_qkxey")]
-player = NodePath("../Player")
+[node name="Level1" type="Node2D" unique_id=1234667453]
+script = ExtResource("1_rifvl")
 next_scene = ExtResource("2_g1txn")
+metadata/_custom_type_script = "uid://buckea7j4edy6"
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("4_yrqjd")]
 position = Vector2(62, 55)

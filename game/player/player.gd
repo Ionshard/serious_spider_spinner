@@ -26,7 +26,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
 	
-	if ray_cast_2d.is_colliding():
+	if not is_moving and ray_cast_2d.is_colliding():
 		shot_indicator.modulate = Color(1, 1, 1)
 	else:
 		shot_indicator.modulate = Color(0.3, 0.3, 0.3)
