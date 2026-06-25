@@ -15,15 +15,23 @@ const WEB_BLAST = preload("uid://c1yfs6w0107j3")
 signal web_shot(web: Web)
 signal web_blast(blast: WebBlast)
 
+@onready var pink_bow: Sprite2D = %PinkBow
+
 var prev_collision_point: Vector2
 var new_point: Vector2
 var new_rotation: float
 var is_moving = false
 var is_dead = false
 
+func _show_bow(visible: bool) -> void:
+	if not Config.cuteMode:
+		return
+	pink_bow.visible = visible
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	prev_collision_point = global_position
+	_show_bow(true)
 
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
@@ -58,11 +66,13 @@ func _physics_process(delta: float) -> void:
 			shots -= 1
 			web_shot.emit(new_web)
 			animated_sprite_2d.play("zoom")
+			_show_bow(false)
 			animated_sprite_2d.rotation = animated_sprite_2d.get_angle_to(new_point) - PI/2
 	
 	if is_moving and (global_position - new_point).length_squared() < 5:
 		is_moving = false
 		animated_sprite_2d.play("move")
+		_show_bow(true)
 		animated_sprite_2d.rotation = new_rotation
 		print("landeded with shots: ", str(shots))
 		if shots == 0:
@@ -83,6 +93,7 @@ func die() -> void:
 func _be_dead() -> void:
 	animated_sprite_2d.play('die')
 	animated_sprite_2d.connect('animation_finished', _after_dead)
+	pink_bow.position.y += 5
 
 func _after_dead() -> void:
 	await get_tree().create_timer(2).timeout

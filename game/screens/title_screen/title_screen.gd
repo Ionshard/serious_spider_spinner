@@ -19,3 +19,7 @@ func _on_new_game_pressed() -> void:
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_cute_mode_toggled(toggled_on: bool) -> void:
+	Config.cuteMode = toggled_on

@@ -57,7 +57,7 @@ func _on_blast_body_entered(body: Node2D) -> void:
 		_trigger_next_scene()
 
 func _on_blast_tree_exited() -> void:
-	if webs.get_children().size() == 0 and player.shots == 0:
+	if web_blasts.get_children().size() == 0 and player.shots == 0:
 		player.die()
 
 func _on_light_bulb_animation_finished() -> void:

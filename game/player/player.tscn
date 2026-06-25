@@ -5,10 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://l5qmanqcjfxy" path="res://assets/sprites/tired-spider.png" id="3_5fytw"]
 [ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_8soms"]
 [ext_resource type="Texture2D" uid="uid://cyq03lve7sgeg" path="res://assets/sprites/arrow.png" id="4_a4w0n"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_epvkq"]
-atlas = ExtResource("1_obar5")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://cvjhnglghs5vv" path="res://assets/sprites/pink-bow.png" id="6_4ste8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ghna"]
 atlas = ExtResource("3_5fytw")
@@ -49,9 +46,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_5fytw"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_epvkq")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ghna")
 }, {
@@ -109,7 +103,7 @@ script = ExtResource("2_b2mth")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907700845]
 sprite_frames = SubResource("SpriteFrames_5fytw")
-animation = &"move"
+animation = &"die"
 autoplay = "move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=303670394]
@@ -129,3 +123,9 @@ offset = Vector2(0, -40)
 [node name="ShotSpawn" type="Marker2D" parent="ShotIndicator" unique_id=1788853341]
 unique_name_in_owner = true
 position = Vector2(-1.9073486e-06, -48)
+
+[node name="PinkBow" type="Sprite2D" parent="." unique_id=1256605835]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -7)
+texture = ExtResource("6_4ste8")
