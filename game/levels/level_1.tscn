@@ -93,13 +93,13 @@ texture = ExtResource("11_mmf06")
 
 [node name="Arrow" type="Sprite2D" parent="Arrow" unique_id=1810419375]
 self_modulate = Color(1, 0.93333334, 0.011764706, 1)
-position = Vector2(37.999985, -184)
+position = Vector2(41.999985, -183)
 scale = Vector2(0.3497003, 0.3849087)
 texture = ExtResource("11_mmf06")
 
 [node name="Arrow2" type="Sprite2D" parent="Arrow" unique_id=380559723]
 self_modulate = Color(1, 0.93333334, 0.011764706, 1)
-position = Vector2(37.999985, -226)
+position = Vector2(41.999985, -227)
 scale = Vector2(0.3497003, 0.3849087)
 texture = ExtResource("11_mmf06")
 
