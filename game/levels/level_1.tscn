@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://resources/level_manager.gd" id="1_rifvl"]
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="2_fq0h3"]
-[ext_resource type="PackedScene" uid="uid://d0fnc4lr71wg2" path="res://game/levels/level_2.tscn" id="2_g1txn"]
 [ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="3_g1txn"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="4_yrqjd"]
 [ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="8_75eok"]
@@ -50,18 +49,19 @@ font_size = 13
 
 [node name="Level1" type="Node2D" unique_id=1234667453]
 script = ExtResource("1_rifvl")
-next_scene = ExtResource("2_g1txn")
 metadata/_custom_type_script = "uid://buckea7j4edy6"
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("4_yrqjd")]
 position = Vector2(62, 55)
 
 [node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("2_fq0h3")]
-position = Vector2(87, 9)
+position = Vector2(111, 10)
 rotation = -3.1415925
+scale = Vector2(2.1552296, 2.1552296)
 
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=1842672988]
-position = Vector2(38, 45)
+position = Vector2(50.999996, 50)
+scale = Vector2(0.7734375, 0.7734375)
 texture = ExtResource("3_g1txn")
 
 [node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("8_75eok")]
