@@ -103,7 +103,7 @@ script = ExtResource("2_b2mth")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=907700845]
 sprite_frames = SubResource("SpriteFrames_5fytw")
-animation = &"die"
+animation = &"move"
 autoplay = "move"
 
 [node name="PinkBow" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1256605835]
