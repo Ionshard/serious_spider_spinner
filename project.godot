@@ -16,7 +16,7 @@ config/description="In this game you play as Sam the Spider, they are very hungr
 They can spin webs to get around and shoot silk blasts, but be careful, they only have so much energy."
 run/main_scene="uid://c1a4pudcw0drg"
 config/features=PackedStringArray("4.6")
-config/icon="uid://bsvtkqrrrwbvl"
+config/icon="uid://il73w68yca54"
 
 [autoload]
 
