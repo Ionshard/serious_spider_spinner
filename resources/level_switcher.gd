@@ -3,6 +3,7 @@ extends Node
 var levels = [
 	"res://game/levels/level_1.tscn",
 	"res://game/levels/level_2.tscn",
+	"res://game/levels/level_3.tscn",
 	"res://game/levels/multi_shot.tscn",
 	"res://game/levels/air_web.tscn",
 	"res://game/levels/trick_shot.tscn",

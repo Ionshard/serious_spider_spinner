@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="2_lb2qd"]
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="3_2lsgo"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="4_q6tti"]
-[ext_resource type="PackedScene" uid="uid://g6ycp0k62mid" path="res://resources/box_map.tscn" id="5_mndiv"]
 [ext_resource type="Texture2D" uid="uid://rgkgj3cmajp6" path="res://assets/sprites/open-door.png" id="6_0o37h"]
 [ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="7_j7kwh"]
 [ext_resource type="PackedScene" uid="uid://b5xtueq53ph4i" path="res://game/props/portrait_of_a_tyson.tscn" id="8_lb2qd"]
@@ -24,18 +23,14 @@ scale = Vector2(1.640625, 1.921875)
 
 [node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("2_lb2qd")]
 position = Vector2(328, 180.99998)
-rotation = -3.1415925
 scale = Vector2(3.32, 3.32)
-
-[node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("3_2lsgo")]
-position = Vector2(80, 11)
-rotation = -3.1415925
-autoplay = "default"
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("4_q6tti")]
 position = Vector2(51, 49)
 
-[node name="BoxMap" parent="." unique_id=1783221475 instance=ExtResource("5_mndiv")]
+[node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("3_2lsgo")]
+position = Vector2(71, 10)
+rotation = -3.1415925
 
 [node name="OpenDoor" type="Sprite2D" parent="." unique_id=2012678502]
 position = Vector2(257, 174)
