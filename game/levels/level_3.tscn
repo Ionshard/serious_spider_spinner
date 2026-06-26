@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bi3bw4p1saob2"]
+
+[ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://resources/level_manager.gd" id="1_yh1g4"]
+[ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="2_lb2qd"]
+[ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="3_2lsgo"]
+[ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="4_q6tti"]
+[ext_resource type="PackedScene" uid="uid://g6ycp0k62mid" path="res://resources/box_map.tscn" id="5_mndiv"]
+[ext_resource type="Texture2D" uid="uid://rgkgj3cmajp6" path="res://assets/sprites/open-door.png" id="6_0o37h"]
+[ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="7_j7kwh"]
+[ext_resource type="PackedScene" uid="uid://b5xtueq53ph4i" path="res://game/props/portrait_of_a_tyson.tscn" id="8_lb2qd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvkuw"]
+size = Vector2(74, 134)
+
+[node name="LevelManager" type="Node2D" unique_id=929025632]
+script = ExtResource("1_yh1g4")
+metadata/_custom_type_script = "uid://buckea7j4edy6"
+
+[node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("2_lb2qd")]
+position = Vector2(412, 175)
+rotation = -3.1415925
+scale = Vector2(3.32, 3.32)
+
+[node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("3_2lsgo")]
+position = Vector2(80, 11)
+rotation = -3.1415925
+autoplay = "default"
+
+[node name="Player" parent="." unique_id=1471301588 instance=ExtResource("4_q6tti")]
+position = Vector2(51, 49)
+
+[node name="BoxMap" parent="." unique_id=1783221475 instance=ExtResource("5_mndiv")]
+
+[node name="OpenDoor" type="Sprite2D" parent="." unique_id=2012678502]
+position = Vector2(340, 174.00002)
+scale = Vector2(2.7578132, 2.7578132)
+texture = ExtResource("6_0o37h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=365009301]
+position = Vector2(-70, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1751932580]
+position = Vector2(362, 170)
+shape = SubResource("RectangleShape2D_qvkuw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=344268758]
+position = Vector2(4.3652344, -10.411499)
+polygon = PackedVector2Array(323.63477, 114.4115, 394.63477, 117.4115, 435.63477, 99.4115, 437.63477, 246.4115, 394.63477, 249.4115, 318.63477, 245.4115)
+
+[node name="SpiderWeb" type="Sprite2D" parent="." unique_id=122855783]
+position = Vector2(44.5, 44.5)
+scale = Vector2(0.6640625, 0.6640625)
+texture = ExtResource("7_j7kwh")
+
+[node name="AnimatedSprite2D" parent="." unique_id=858025539 instance=ExtResource("8_lb2qd")]
+position = Vector2(144, 164)
+scale = Vector2(1.640625, 1.640625)
