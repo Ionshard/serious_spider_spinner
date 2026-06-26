@@ -7,12 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="4_yrqjd"]
 [ext_resource type="Texture2D" uid="uid://chd52q83vfg8v" path="res://assets/sprites/furniture/wood-box.png" id="6_l6jt4"]
 [ext_resource type="PackedScene" uid="uid://bk1f5k7upfw1a" path="res://game/props/light_switch.tscn" id="8_75eok"]
-[ext_resource type="PackedScene" uid="uid://604qok451tqu" path="res://game/props/light_bulb_2.tscn" id="9_d7cbn"]
 [ext_resource type="Texture2D" uid="uid://dgd0bbguxtj7f" path="res://assets/sprites/furniture/bulletin-board.png" id="9_fq0h3"]
 [ext_resource type="Texture2D" uid="uid://d3a8gkla3y67n" path="res://assets/sprites/spider-flavor-text.png" id="10_g1txn"]
+[ext_resource type="Texture2D" uid="uid://cyq03lve7sgeg" path="res://assets/sprites/arrow.png" id="11_mmf06"]
+[ext_resource type="Texture2D" uid="uid://cb0wtrr7perc0" path="res://assets/sprites/web-shot-icon.png" id="12_1skah"]
+[ext_resource type="FontFile" uid="uid://djw8prjdycr8b" path="res://assets/fonts/Greengoth Regular.ttf" id="12_dea75"]
+[ext_resource type="Texture2D" uid="uid://cgpl4iykpjsuy" path="res://assets/sprites/mouse-icon.png" id="13_mmf06"]
+[ext_resource type="Texture2D" uid="uid://bnwfv70jpvq22" path="res://assets/sprites/furniture/small-wall-shelf.png" id="14_mmf06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkxey"]
-size = Vector2(85, 77)
+size = Vector2(48, 14.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1skah"]
+size = Vector2(311.5, 163)
+
+[sub_resource type="LabelSettings" id="LabelSettings_75eok"]
+font = ExtResource("12_dea75")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpo0v"]
+font = ExtResource("12_dea75")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7cbn"]
+font = ExtResource("12_dea75")
+font_size = 11
 
 [node name="Level1" type="Node2D" unique_id=1234667453]
 script = ExtResource("1_rifvl")
@@ -26,27 +45,27 @@ position = Vector2(62, 55)
 position = Vector2(87, 9)
 rotation = -3.1415925
 
-[node name="LightBulb2" parent="." unique_id=1563169927 instance=ExtResource("9_d7cbn")]
-position = Vector2(115, 9)
-rotation = -3.1415925
-
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=1842672988]
 position = Vector2(38, 45)
 texture = ExtResource("3_g1txn")
 
 [node name="WoodBox" type="Sprite2D" parent="." unique_id=1324500403]
-position = Vector2(73.000015, 192)
-scale = Vector2(4.499999, 4.499999)
+position = Vector2(416, 201)
+scale = Vector2(3.7187498, 3.7187498)
 texture = ExtResource("6_l6jt4")
 
 [node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("8_75eok")]
-position = Vector2(227, 229.99998)
+position = Vector2(251.99998, 218)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2054731899]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=4441337]
-position = Vector2(80, 225)
+position = Vector2(25, 206)
 shape = SubResource("RectangleShape2D_qkxey")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132099460]
+position = Vector2(313.25, 92.5)
+shape = SubResource("RectangleShape2D_1skah")
 
 [node name="BulletinBoard" type="Sprite2D" parent="." unique_id=1010872845]
 position = Vector2(335, 96)
@@ -56,3 +75,76 @@ texture = ExtResource("9_fq0h3")
 position = Vector2(286, 59.000004)
 scale = Vector2(0.62121207, 0.6212121)
 texture = ExtResource("10_g1txn")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1209382295]
+position = Vector2(183, 107)
+rotation = 1.5707964
+texture = ExtResource("11_mmf06")
+
+[node name="Arrow" type="Sprite2D" parent="Arrow" unique_id=1810419375]
+position = Vector2(180, 106)
+rotation = 1.5707964
+texture = ExtResource("11_mmf06")
+
+[node name="Arrow2" type="Sprite2D" parent="." unique_id=1819390396]
+modulate = Color(0.33333334, 0.33333334, 0.33333334, 1)
+position = Vector2(182, 131)
+rotation = 1.5707964
+texture = ExtResource("11_mmf06")
+
+[node name="WebShotIcon" type="Sprite2D" parent="." unique_id=1885397605]
+position = Vector2(182.00002, 153.00002)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("12_1skah")
+
+[node name="RMB" type="Label" parent="." unique_id=1497635997]
+offset_left = 415.0
+offset_top = 104.0
+offset_right = 444.0
+offset_bottom = 133.0
+text = " Shoot
+(RMB)"
+label_settings = SubResource("LabelSettings_75eok")
+
+[node name="LMB" type="Label" parent="." unique_id=980162288]
+offset_left = 366.0
+offset_top = 104.0
+offset_right = 394.0
+offset_bottom = 133.0
+text = " Move
+(LMB)"
+label_settings = SubResource("LabelSettings_75eok")
+
+[node name="WebShooter" type="Label" parent="." unique_id=728841671]
+offset_left = 199.0
+offset_top = 141.0
+offset_right = 401.0
+offset_bottom = 168.0
+text = "Energy for spinning is low. 
+Be careful not to let your web spin counter hit 0"
+label_settings = SubResource("LabelSettings_qpo0v")
+
+[node name="WebSpinToPlatform" type="Label" parent="." unique_id=1832073624]
+offset_left = 203.0
+offset_top = 99.0
+offset_right = 343.0
+offset_bottom = 122.0
+text = "Spin webs to move to other platforms"
+label_settings = SubResource("LabelSettings_d7cbn")
+
+[node name="NoSafePlatorm" type="Label" parent="." unique_id=159559429]
+offset_left = 201.0
+offset_top = 121.0
+offset_right = 343.0
+offset_bottom = 144.0
+text = "No safe platform to spin web to"
+label_settings = SubResource("LabelSettings_75eok")
+
+[node name="MouseIcon" type="Sprite2D" parent="." unique_id=810191934]
+position = Vector2(403, 139)
+texture = ExtResource("13_mmf06")
+
+[node name="SmallWallShelf" type="Sprite2D" parent="." unique_id=537203815]
+position = Vector2(28.999998, 221)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("14_mmf06")
