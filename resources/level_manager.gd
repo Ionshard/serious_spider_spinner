@@ -29,6 +29,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("menu"):
+		get_tree().change_scene_to_file("uid://c1a4pudcw0drg")
 
 func _on_player_web_shot(web: Web) -> void:
 	webs.add_child(web)

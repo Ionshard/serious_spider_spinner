@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Serious Spider Spinner"
-run/main_scene="uid://dsf4w82teuwbu"
+config/name="Starvin' Sam"
+config/description="In this game you play as Sam the Spider, they are very hungry but no flies seem to be coming near the web. Sam will have to take things into their own hands to avoid starving. If only there was something they could do to attract flies to their web...
+
+They can spin webs to get around and shoot silk blasts, but be careful, they only have so much energy."
+run/main_scene="uid://c1a4pudcw0drg"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.svg"
+config/icon="uid://il73w68yca54"
 
 [autoload]
 
@@ -43,6 +46,11 @@ reset={
 web_blast={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(364, 37),"global_position":Vector2(378, 110),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+menu={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 
