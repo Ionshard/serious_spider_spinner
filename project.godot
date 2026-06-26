@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Serious Spider Spinner"
-run/main_scene="uid://dsf4w82teuwbu"
+run/main_scene="uid://c1a4pudcw0drg"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.svg"
 

@@ -37,7 +37,7 @@ scale = Vector2(1.34375, 1.3359375)
 texture = ExtResource("5_go8g1")
 
 [node name="FramedPicture1" type="Sprite2D" parent="." unique_id=432041079]
-position = Vector2(298, 109)
+position = Vector2(278, 108)
 scale = Vector2(3.96875, 3.96875)
 texture = ExtResource("6_2a8w4")
 
@@ -62,5 +62,5 @@ position = Vector2(41.95774, 57.029816)
 shape = SubResource("RectangleShape2D_u51cf")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1176693930]
-position = Vector2(188.45773, -77.470184)
+position = Vector2(166.95773, -78.970184)
 shape = SubResource("RectangleShape2D_p6trp")
