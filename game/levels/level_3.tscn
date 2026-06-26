@@ -20,6 +20,7 @@ metadata/_custom_type_script = "uid://buckea7j4edy6"
 [node name="AnimatedSprite2D" parent="." unique_id=858025539 instance=ExtResource("8_lb2qd")]
 position = Vector2(412, 93.00001)
 scale = Vector2(1.640625, 1.921875)
+frame_progress = 0.4287905
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=22561116]
 position = Vector2(-117.028564, -41.62602)

@@ -16,11 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://4usii6op1b3a" path="res://assets/sprites/light-bulbs/light-bulb-off.png" id="15_d7cbn"]
 [ext_resource type="Texture2D" uid="uid://by02xjwjd423l" path="res://assets/sprites/light-bulbs/light-bulb-on.png" id="16_qpo0v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkxey"]
-size = Vector2(56, 13.375)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1skah"]
-size = Vector2(318, 167)
+size = Vector2(318, 162)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lxfsh"]
 font = ExtResource("12_dea75")
@@ -47,12 +44,16 @@ font_color = Color(1, 0.93333334, 0.011764706, 1)
 font = ExtResource("12_dea75")
 font_size = 13
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkxey"]
+size = Vector2(56, 12.687515)
+
 [node name="Level1" type="Node2D" unique_id=1234667453]
 script = ExtResource("1_rifvl")
 metadata/_custom_type_script = "uid://buckea7j4edy6"
 
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("4_yrqjd")]
-position = Vector2(62, 55)
+position = Vector2(68, 74)
+shots = 5
 
 [node name="LightBulb" parent="." unique_id=2017325752 instance=ExtResource("2_fq0h3")]
 position = Vector2(111, 10)
@@ -65,21 +66,18 @@ scale = Vector2(0.7734375, 0.7734375)
 texture = ExtResource("3_g1txn")
 
 [node name="LightSwitch" parent="." unique_id=1429434999 instance=ExtResource("8_75eok")]
-position = Vector2(251.99998, 218)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2054731899]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=4441337]
-position = Vector2(30, 224)
-shape = SubResource("RectangleShape2D_qkxey")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2132099460]
-position = Vector2(310, 94.5)
-shape = SubResource("RectangleShape2D_1skah")
+position = Vector2(187.00002, 200)
 
 [node name="BulletinBoard" type="Sprite2D" parent="." unique_id=1010872845]
 position = Vector2(335, 96)
 texture = ExtResource("9_fq0h3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BulletinBoard" unique_id=2054731899]
+position = Vector2(-335, -96)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BulletinBoard/StaticBody2D" unique_id=2132099460]
+position = Vector2(310, 95)
+shape = SubResource("RectangleShape2D_1skah")
 
 [node name="SpiderFlavorText" type="Sprite2D" parent="." unique_id=1472771424]
 position = Vector2(286, 59.000004)
@@ -170,9 +168,16 @@ position = Vector2(412, 111)
 texture = ExtResource("13_mmf06")
 
 [node name="SmallWallShelf" type="Sprite2D" parent="." unique_id=537203815]
-position = Vector2(28.999998, 240)
+position = Vector2(28, 252)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("14_mmf06")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmallWallShelf" unique_id=997314374]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallWallShelf/StaticBody2D" unique_id=4441337]
+position = Vector2(1.9073486e-06, -5.0099945)
+scale = Vector2(0.32, 0.32)
+shape = SubResource("RectangleShape2D_qkxey")
 
 [node name="LightSwitchOn" type="Sprite2D" parent="." unique_id=731614125]
 position = Vector2(391, 144)

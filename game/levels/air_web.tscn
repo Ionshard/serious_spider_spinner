@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cjobq7j2k2kdm"]
 
 [ext_resource type="Script" uid="uid://buckea7j4edy6" path="res://resources/level_manager.gd" id="1_h6sgs"]
+[ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="2_d0xgj"]
 [ext_resource type="PackedScene" uid="uid://b57b0fl545egk" path="res://game/player/player.tscn" id="2_sxtog"]
 [ext_resource type="PackedScene" uid="uid://g6ycp0k62mid" path="res://resources/box_map.tscn" id="3_d0xgj"]
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="4_peshs"]
@@ -10,8 +11,12 @@
 script = ExtResource("1_h6sgs")
 metadata/_custom_type_script = "uid://buckea7j4edy6"
 
+[node name="SpiderWeb" type="Sprite2D" parent="." unique_id=1917228355]
+position = Vector2(235, 66)
+texture = ExtResource("2_d0xgj")
+
 [node name="Player" parent="." unique_id=1471301588 instance=ExtResource("2_sxtog")]
-position = Vector2(43, 232)
+position = Vector2(45, 234)
 
 [node name="BoxMap" parent="." unique_id=1783221475 instance=ExtResource("3_d0xgj")]
 position = Vector2(-102, 0)

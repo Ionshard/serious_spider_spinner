@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bym60bk3nmo84" path="res://assets/sprites/furniture/framed-picture-tyson.png" id="1_pm05n"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm05n"]
+atlas = ExtResource("1_pm05n")
+region = Rect2(0, 0, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkxs0"]
 atlas = ExtResource("1_pm05n")
 region = Rect2(0, 0, 128, 128)
@@ -13,10 +17,13 @@ region = Rect2(128, 0, 128, 128)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2kr3e"]
 animations = [{
 "frames": [{
-"duration": 5.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm05n")
+}, {
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_dkxs0")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sp3rb")
 }],
 "loop": true,
@@ -25,6 +32,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=858025539]
+position = Vector2(237, 165)
 sprite_frames = SubResource("SpriteFrames_2kr3e")
 autoplay = "default"
-frame_progress = 0.8160027
+frame_progress = 0.22722882
