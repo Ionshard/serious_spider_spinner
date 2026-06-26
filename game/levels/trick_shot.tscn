@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bu31eavxdfapo" path="res://game/props/light_bulb.tscn" id="5_1l48b"]
 [ext_resource type="PackedScene" uid="uid://g6ycp0k62mid" path="res://resources/box_map.tscn" id="5_vnimu"]
 [ext_resource type="Texture2D" uid="uid://bsvtkqrrrwbvl" path="res://assets/sprites/spider-web.png" id="6_6wo60"]
-[ext_resource type="PackedScene" uid="uid://b5xtueq53ph4i" path="res://game/props/portrait_of_a_tyson.tscn" id="7_f8kqx"]
 
 [node name="Level3" type="Node2D" unique_id=252306816]
 script = ExtResource("1_vnimu")
@@ -29,6 +28,3 @@ tile_map_data = PackedByteArray("AAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAA
 position = Vector2(411, 62)
 scale = Vector2(0.5078125, 0.5078125)
 texture = ExtResource("6_6wo60")
-
-[node name="AnimatedSprite2D" parent="." unique_id=858025539 instance=ExtResource("7_f8kqx")]
-position = Vector2(254, 89)
