@@ -22,6 +22,7 @@ func _ready() -> void:
 	player = get_node("Player")
 	player.connect('web_shot', _on_player_web_shot)
 	player.connect('web_blast', _on_player_web_blast)
+	ui.set_shots(player.shots)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
