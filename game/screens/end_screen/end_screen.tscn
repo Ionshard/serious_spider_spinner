@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://djw8prjdycr8b" path="res://assets/fonts/Greengoth Regular.ttf" id="2_w1d63"]
 [ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_t66qx"]
 [ext_resource type="Texture2D" uid="uid://dgsf3e55o32sh" path="res://assets/sprites/satisfied-sam.png" id="5_5vn7n"]
+[ext_resource type="Texture2D" uid="uid://cvjhnglghs5vv" path="res://assets/sprites/pink-bow.png" id="6_b6m1b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r0uwp"]
 font = ExtResource("2_w1d63")
@@ -153,5 +154,12 @@ text = "Return to Menu"
 position = Vector2(230, 171)
 scale = Vector2(0.921875, 0.921875)
 texture = ExtResource("5_5vn7n")
+
+[node name="PinkBow" type="Sprite2D" parent="." unique_id=1580714137]
+unique_name_in_owner = true
+visible = false
+position = Vector2(229, 148)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_b6m1b")
 
 [connection signal="pressed" from="ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
