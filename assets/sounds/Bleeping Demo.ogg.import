@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4rwadkan8vhw"
+path="res://.godot/imported/Bleeping Demo.ogg-ef3c8870acce2852d12d16b42c453d7b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/Bleeping Demo.ogg"
+dest_files=["res://.godot/imported/Bleeping Demo.ogg-ef3c8870acce2852d12d16b42c453d7b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

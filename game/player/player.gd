@@ -9,6 +9,13 @@ class_name Player
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var shot_indicator: Sprite2D = %ShotIndicator
 @onready var shot_spawn: Marker2D = %ShotSpawn
+
+@onready var web_shot_sound: AudioStreamPlayer2D = $WebShotSound
+@onready var no_shoot_sound: AudioStreamPlayer2D = $NoShootSound
+@onready var sleep_sound: AudioStreamPlayer2D = $SleepSound
+@onready var web_blast_sound: AudioStreamPlayer2D = $WebBlastSound
+
+
 const WEB = preload("uid://c8l4u2mvfe2jq")
 const WEB_BLAST = preload("uid://c1yfs6w0107j3")
 
@@ -33,6 +40,8 @@ func _show_bow(visible: bool) -> void:
 func _ready() -> void:
 	prev_collision_point = global_position
 	_show_bow(true)
+	if Config.cuteMode:
+		%CuteSound.play()
 
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000
@@ -43,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		shot_indicator.modulate = Color(0.3, 0.3, 0.3, 0.5)
 	
 	if shots != 0 and Input.is_action_just_pressed("web_blast"):
+		web_blast_sound.play()
 		var new_blast: WebBlast = WEB_BLAST.instantiate()
 		new_blast.global_position = shot_spawn.global_position
 		new_blast.linear_velocity = new_blast.global_position.direction_to(get_global_mouse_position()).normalized() * blast_speed
@@ -51,7 +61,9 @@ func _physics_process(delta: float) -> void:
 	
 	#if shots != 0 and not is_moving and Input.is_action_just_pressed('spin_web'):
 	if shots != 0 and Input.is_action_just_pressed('spin_web'):
-		if(ray_cast_2d.is_colliding()):
+		if not ray_cast_2d.is_colliding():
+			no_shoot_sound.play()
+		else:
 			var collision_point = ray_cast_2d.get_collision_point()
 			var collision_normal = ray_cast_2d.get_collision_normal()
 			new_point = collision_point + (collision_normal*3)
@@ -69,6 +81,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("zoom")
 			_show_bow(false)
 			animated_sprite_2d.rotation = animated_sprite_2d.get_angle_to(new_point) - PI/2
+			web_shot_sound.play()
 	
 	if is_moving and (global_position - new_point).length_squared() < 5:
 		is_moving = false
@@ -93,6 +106,7 @@ func die() -> void:
 		_be_dead()
 		
 func _be_dead() -> void:
+	sleep_sound.play()
 	animated_sprite_2d.play('die')
 	animated_sprite_2d.connect('animation_finished', _after_dead)
 	pink_bow.position.y += 5

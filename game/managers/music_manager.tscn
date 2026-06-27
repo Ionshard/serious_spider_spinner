@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b413346o725c4"]
+
+[ext_resource type="Script" uid="uid://i4ha34e8rtej" path="res://game/managers/music_manager.gd" id="1_1clrt"]
+[ext_resource type="AudioStream" uid="uid://c4rwadkan8vhw" path="res://assets/sounds/Bleeping Demo.ogg" id="2_svj4j"]
+[ext_resource type="AudioStream" uid="uid://crmv4v5ayyhx3" path="res://assets/sounds/Happy Bee.ogg" id="3_xdijn"]
+[ext_resource type="AudioStream" uid="uid://bojb6vbnhnmlv" path="res://assets/sounds/Lightless Dawn.ogg" id="4_w882c"]
+
+[node name="MusicManager" type="Node" unique_id=1085832215]
+script = ExtResource("1_1clrt")
+
+[node name="BleepingDemo" type="AudioStreamPlayer" parent="." unique_id=371538419]
+unique_name_in_owner = true
+stream = ExtResource("2_svj4j")
+volume_db = -12.0
+parameters/looping = true
+
+[node name="HappyBee" type="AudioStreamPlayer" parent="." unique_id=1029793856]
+unique_name_in_owner = true
+stream = ExtResource("3_xdijn")
+volume_db = -12.0
+
+[node name="LightlessDawn" type="AudioStreamPlayer" parent="." unique_id=697238953]
+unique_name_in_owner = true
+stream = ExtResource("4_w882c")

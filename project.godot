@@ -22,6 +22,7 @@ config/icon="uid://il73w68yca54"
 
 Config="*uid://bng0x10csjmrq"
 LevelSwitcher="*uid://cbkguyo8jexc8"
+MusicManager="*uid://b413346o725c4"
 
 [display]
 

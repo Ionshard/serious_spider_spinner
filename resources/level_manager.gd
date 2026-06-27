@@ -2,11 +2,14 @@ extends Node2D
 class_name LevelManager
 
 const UI_SCENE = preload("uid://ds020ov238vb5")
+const AUDIO_MANAGER = preload("uid://bdq036884f2de")
+
 
 var player: Player
 var ui: UI
 var webs: Node2D
 var web_blasts: Node2D
+@onready var audio_manager = AUDIO_MANAGER.instantiate()
 
 func has_blasts() -> bool:
 	return web_blasts.get_child_count() > 0
@@ -23,6 +26,8 @@ func _ready() -> void:
 	player.connect('web_shot', _on_player_web_shot)
 	player.connect('web_blast', _on_player_web_blast)
 	ui.set_shots(player.shots)
+	
+	add_child(audio_manager)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +48,10 @@ func _on_player_web_blast(blast: WebBlast) -> void:
 	blast.connect('tree_exited', _on_blast_tree_exited)
 	
 func _on_blast_body_entered(body: Node2D) -> void:
-	if body is LightSwitch:
+	if body is not LightSwitch:
+		audio_manager.get_node("CollisionSound").play()
+	else:
+		audio_manager.get_node("LightSwitchClickSound").play()
 		player.is_winning = true
 		var sprite = body.get_node("%Sprite2D")
 		sprite.texture = load("res://resources/light_on.tres")
@@ -55,7 +63,7 @@ func _on_blast_body_entered(body: Node2D) -> void:
 				
 		for light_bulb in light_bulbs:
 			light_bulb.play('default')
-		
+		audio_manager.get_node("BunchOFlyBuzzesSound").play()
 		if light_bulbs.size() > 0:
 			light_bulbs[0].connect('animation_finished', _on_light_bulb_animation_finished)
 			return

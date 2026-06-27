@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cb78g50s60tye" path="res://assets/sprites/light-switch/light-switch-on.png" id="14_75eok"]
 [ext_resource type="Texture2D" uid="uid://bnwfv70jpvq22" path="res://assets/sprites/furniture/small-wall-shelf.png" id="14_mmf06"]
 [ext_resource type="Texture2D" uid="uid://4usii6op1b3a" path="res://assets/sprites/light-bulbs/light-bulb-off.png" id="15_d7cbn"]
+[ext_resource type="AudioStream" uid="uid://ba656uujbitby" path="res://assets/sounds/aww_cute.wav" id="16_75eok"]
 [ext_resource type="Texture2D" uid="uid://by02xjwjd423l" path="res://assets/sprites/light-bulbs/light-bulb-on.png" id="16_qpo0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1skah"]
@@ -196,3 +197,7 @@ texture = ExtResource("16_qpo0v")
 position = Vector2(375.00003, 144)
 scale = Vector2(1.1875045, 1.357151)
 texture = ExtResource("12_1skah")
+
+[node name="CuteSound" type="AudioStreamPlayer2D" parent="." unique_id=397681985]
+unique_name_in_owner = true
+stream = ExtResource("16_75eok")

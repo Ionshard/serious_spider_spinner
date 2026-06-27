@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bdq036884f2de"]
+
+[ext_resource type="AudioStream" uid="uid://bai0yu6t46lsv" path="res://assets/sounds/light_switch_click.wav" id="1_mh56v"]
+[ext_resource type="AudioStream" uid="uid://dr8heen2xv7ji" path="res://assets/sounds/web_blast_break.wav" id="2_c6dl6"]
+[ext_resource type="AudioStream" uid="uid://l11h2xldekro" path="res://assets/sounds/bunch_o_fly_buzzes.wav" id="3_cwnc1"]
+
+[node name="AudioManager" type="Node2D" unique_id=769311049]
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="." unique_id=98372063]
+unique_name_in_owner = true
+stream = ExtResource("2_c6dl6")
+
+[node name="LightSwitchClickSound" type="AudioStreamPlayer2D" parent="." unique_id=787888033]
+unique_name_in_owner = true
+stream = ExtResource("1_mh56v")
+
+[node name="BunchOFlyBuzzesSound" type="AudioStreamPlayer2D" parent="." unique_id=960119753]
+unique_name_in_owner = true
+stream = ExtResource("3_cwnc1")

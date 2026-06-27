@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bk5apf2mihedw" path="res://assets/sprites/spider-line-zoom.png" id="3_8soms"]
 [ext_resource type="Texture2D" uid="uid://cyq03lve7sgeg" path="res://assets/sprites/arrow.png" id="4_a4w0n"]
 [ext_resource type="Texture2D" uid="uid://cvjhnglghs5vv" path="res://assets/sprites/pink-bow.png" id="6_4ste8"]
+[ext_resource type="AudioStream" uid="uid://78w3qq5ogkff" path="res://assets/sounds/web_shot.wav" id="7_anr75"]
+[ext_resource type="AudioStream" uid="uid://dwqgoxj5ly13w" path="res://assets/sounds/no_shoot.wav" id="7_epvkq"]
+[ext_resource type="AudioStream" uid="uid://d0lw8pud7a8ni" path="res://assets/sounds/sleep.wav" id="9_5ghna"]
+[ext_resource type="AudioStream" uid="uid://ct4ibsdcsywrk" path="res://assets/sounds/web_blast.wav" id="10_j0mij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ghna"]
 atlas = ExtResource("3_5fytw")
@@ -129,3 +133,16 @@ offset = Vector2(0, -40)
 [node name="ShotSpawn" type="Marker2D" parent="ShotIndicator" unique_id=1788853341]
 unique_name_in_owner = true
 position = Vector2(-1.9073486e-06, -48)
+
+[node name="NoShootSound" type="AudioStreamPlayer2D" parent="." unique_id=210757416]
+stream = ExtResource("7_epvkq")
+
+[node name="WebShotSound" type="AudioStreamPlayer2D" parent="." unique_id=907850080]
+stream = ExtResource("7_anr75")
+max_polyphony = 2
+
+[node name="SleepSound" type="AudioStreamPlayer2D" parent="." unique_id=650906110]
+stream = ExtResource("9_5ghna")
+
+[node name="WebBlastSound" type="AudioStreamPlayer2D" parent="." unique_id=1721235063]
+stream = ExtResource("10_j0mij")
