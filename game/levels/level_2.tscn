@@ -28,6 +28,7 @@ rotation = -3.1415925
 scale = Vector2(2.525, 2.525)
 
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=694921188]
+unique_name_in_owner = true
 position = Vector2(49, 46)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_uivyf")

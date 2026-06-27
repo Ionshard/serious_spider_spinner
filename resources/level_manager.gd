@@ -3,6 +3,7 @@ class_name LevelManager
 
 const UI_SCENE = preload("uid://ds020ov238vb5")
 const AUDIO_MANAGER = preload("uid://bdq036884f2de")
+const JUICY_FLY = preload("uid://ire1avhfah62")
 
 
 var player: Player
@@ -63,7 +64,16 @@ func _on_blast_body_entered(body: Node2D) -> void:
 				
 		for light_bulb in light_bulbs:
 			light_bulb.play('default')
+			
 		audio_manager.get_node("BunchOFlyBuzzesSound").play()
+		
+		var spider_web = %SpiderWeb
+		var juicy_fly: Node2D = JUICY_FLY.instantiate()
+		if spider_web.global_position.x < 240:
+			juicy_fly.scale.x = -1
+		juicy_fly.global_position = %SpiderWeb.global_position
+		add_child(juicy_fly)
+		
 		if light_bulbs.size() > 0:
 			light_bulbs[0].connect('animation_finished', _on_light_bulb_animation_finished)
 			return

@@ -12,6 +12,7 @@ script = ExtResource("1_h6sgs")
 metadata/_custom_type_script = "uid://buckea7j4edy6"
 
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=1917228355]
+unique_name_in_owner = true
 position = Vector2(235, 66)
 texture = ExtResource("2_d0xgj")
 

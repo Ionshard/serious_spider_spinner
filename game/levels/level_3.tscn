@@ -56,6 +56,7 @@ position = Vector2(-77, -10)
 polygon = PackedVector2Array(321, 116, 394.63477, 117.4115, 435.63477, 99.4115, 437.63477, 246.4115, 394.63477, 249.4115, 318, 249)
 
 [node name="SpiderWeb" type="Sprite2D" parent="." unique_id=122855783]
+unique_name_in_owner = true
 position = Vector2(44.5, 42.500004)
 scale = Vector2(0.6640625, 0.6640625)
 texture = ExtResource("7_j7kwh")
