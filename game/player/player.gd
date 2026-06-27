@@ -40,8 +40,6 @@ func _show_bow(visible: bool) -> void:
 func _ready() -> void:
 	prev_collision_point = global_position
 	_show_bow(true)
-	if Config.cuteMode:
-		%CuteSound.play()
 
 func _physics_process(delta: float) -> void:
 	ray_cast_2d.target_position = global_position.direction_to(get_global_mouse_position()) * 5000

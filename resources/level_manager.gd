@@ -29,6 +29,8 @@ func _ready() -> void:
 	ui.set_shots(player.shots)
 	
 	add_child(audio_manager)
+	if %CuteSound and Config.cuteMode:
+		%CuteSound.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
